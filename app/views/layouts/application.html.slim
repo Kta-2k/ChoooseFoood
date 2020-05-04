@@ -5,6 +5,16 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    div 
+      nav
+        ul
+          - if user_signed_in?
+            = link_to "ログアウト", destroy_user_session_path, method: "delete" 
+          - else
+            = link_to "新規登録", new_user_registration_path, method: "get"
+            |　　
+            = link_to "ログイン", new_user_session_path, method: "get"
+
     div class="center"
       header
         h1
@@ -17,16 +27,6 @@ html
             i
               |666
           |人目の訪問者です! キリ番の人は踏み逃げ禁止！！ 
-        
-        p
-          - if user_signed_in?
-            = link_to "ログアウト", destroy_user_session_path, method: "delete" 
-          - else
-            | ログインしてません <br />
-            = link_to "新規登録", new_user_registration_path, method: "get"
-            |　　
-            = link_to "ログイン", new_user_session_path, method: "get"
-
 
     div
       == yield

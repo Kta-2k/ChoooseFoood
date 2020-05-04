@@ -5,13 +5,13 @@ class FoodController < ApplicationController
 
   def index
     if params[:category]
-      p "index"
-      p params[:category].intern
+      # p "index"
+      # p params[:category].intern
 
 
       food = Food.where(category: params[:category].intern).order("RAND()").limit(1).first
       @food = food[:name]
-      # p @food
+      p @food
     end
   end
 
@@ -20,9 +20,9 @@ class FoodController < ApplicationController
   end
 
   def create
-    p params[:category]
-    p "create"
-    @food = Food.where(category: :params[:category]).order("RAND()").limit(1).first
+    # p params[:category]
+    # p "create"
+    # @food = Food.where(category: :params[:category]).order("RAND()").limit(1).first
   end
 
 end

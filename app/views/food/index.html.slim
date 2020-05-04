@@ -3,9 +3,7 @@ div class="center"
     - if @food.nil?
       = image_tag "sign.gif"
     
-      = form_with url: "", method: "get" do |f|
-        / p 
-        /   = f.label "選んでね"
+      = form_with url: "", local: true, method: "get" do |f|
       
         p 
           = f.select :category, Food.categories.keys.to_a, {}, :id => "select"
