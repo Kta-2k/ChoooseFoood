@@ -1,0 +1,5 @@
+create_table "histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  t.bigint "user_id"
+  t.bigint "food_id"
+  t.datetime "created_at", default: ->; { "CURRENT_TIMESTAMP" }, null: false
+end
