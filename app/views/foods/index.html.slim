@@ -10,8 +10,12 @@ div class='center'
         local: true
       }
 
+      food_category_collection = Food.categories.keys.to_a.map do |key|
+        [Food.human_attribute_name("category.#{key}"), key]
+      end
+
     = form_with(form_options) do |f|
       p
-        = f.select :category, Food.categories.keys.to_a, {}, id: 'select'
+        = f.select :category, food_category_collection, {}, id: 'select'
       p
         = f.submit '選ぶ!', name: nil, id: 'btn'
