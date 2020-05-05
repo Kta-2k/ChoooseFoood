@@ -1,0 +1,17 @@
+div class="center"
+  div class="result"
+
+    = image_tag "sign.gif"
+
+    ruby:
+      form_options = {
+        url: food_path,
+        method: :get,
+        local: true
+      }
+
+    = form_with(form_options) do |f|
+      p
+        = f.select :category, Food.categories.keys.to_a, {}, id: 'select'
+      p
+        = f.submit '選ぶ!', name: nil, id: 'btn'

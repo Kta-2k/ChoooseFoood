@@ -1,0 +1,8 @@
+div class='center'
+  div class='result'
+    p
+      = "選ばれたメニュー：#{@food.name}"
+    p
+      = link_to 'BACK', root_path, id: 'back'
+    p
+      = image_tag 'neverends.gif'
