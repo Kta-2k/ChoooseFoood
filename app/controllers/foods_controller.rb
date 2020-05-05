@@ -14,10 +14,10 @@ class FoodsController < ApplicationController
   end
 
   def random_food
-    Food.where(category: food_params).order('RAND()').limit(1).first
+    Food.where(category: food_params[:category]).order('RAND()').limit(1).first
   end
 
   def food_params
-    params.require(:category)
+    params.permit(:category)
   end
 end
