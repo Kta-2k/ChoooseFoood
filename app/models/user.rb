@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   
+  has_many :histories
+  has_many :food, through: :histories
+  
   # before_action :authenticate_user!
 
 end

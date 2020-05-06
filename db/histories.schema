@@ -2,6 +2,4 @@ create_table :histories do |t|
   t.bigint :user_id
   t.bigint :food_id
   t.datetime :selected_at
-
-  t.timestamps null: false
 end
