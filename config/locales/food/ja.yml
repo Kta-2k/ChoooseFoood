@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      food:
+        name: メニュー
+        category: カテゴリ
+        main_ingredients: メイン食材
+      food/category:
+        meat: 肉
+        fish: 魚
+        vegetable: 野菜
+        noodle: 麺
