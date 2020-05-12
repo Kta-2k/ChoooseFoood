@@ -14,7 +14,9 @@ div class='center'
       = link_to 'BACK', root_path, id: 'back'
     p
       = image_tag 'neverends.gif'
+
     
     = form_with(form_options) do |f|
       p
+        = f.hidden_field :food_id, :value => @food_id[:id]
         = f.submit '保存', :id => 'btn'
