@@ -2,10 +2,12 @@ class FoodsController < ApplicationController
   before_action :set_food, only: %i[show]
 
   def index
+    p 'food params : ', food_params
     redirect_to food_path(random_food) if food_params[:category].present?
   end
 
   def show
+    @food_id = {id: params[:id]}
   end
 
   private
