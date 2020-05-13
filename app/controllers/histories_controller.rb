@@ -1,6 +1,6 @@
 class HistoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_food_id, only: %i[create]
+  before_action :set_food, only: %i[create]
 
   def create
     if History.create(user: current_user, food: @food, selected_at: Time.now)
@@ -13,7 +13,7 @@ class HistoriesController < ApplicationController
 
   private
   
-  def set_food_id
+  def set_food
     @food = Food.find(history_params[:food_id])
   end
 
