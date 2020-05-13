@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show]
-  # before_action :food_id, only: %i[show]
 
   def index
     redirect_to food_path(random_food) if food_params[:category].present?

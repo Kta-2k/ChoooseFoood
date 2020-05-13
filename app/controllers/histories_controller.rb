@@ -11,9 +11,6 @@ class HistoriesController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
   
   def set_food_id
