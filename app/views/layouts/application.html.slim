@@ -16,6 +16,9 @@ html
             = link_to "ログイン", new_user_session_path, method: "get"
 
     div class="center"
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: name
+
       header
         h1
           = link_to "/", id: 'logo' do

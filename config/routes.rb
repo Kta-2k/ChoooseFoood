@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   root 'foods#index'
 
   resources :foods, only: %i[index show]
+
+  resources :histories, only: %i[create destroy]
   
 end
