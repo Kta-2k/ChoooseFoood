@@ -18,5 +18,5 @@ div class='center'
     
     = form_with(form_options) do |f|
       p
-        = f.hidden_field :food_id, :value => @food_id[:id]
-        = f.submit '保存', :id => 'btn'
+        = f.hidden_field :food_id, value: @food.id
+        = f.submit '保存', id: 'btn'
