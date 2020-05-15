@@ -1,7 +1,7 @@
 div class='center'
   div class='result'
 
-    = image_tag "sign.gif"
+    = image_tag 'sign.gif'
 
     ruby:
       form_options = {
@@ -17,12 +17,12 @@ div class='center'
     = form_with(form_options) do |f|
       
       p 
-        = f.label "カテゴリー"
+        = f.label 'カテゴリー'
         = f.select :category, food_category_collection, {include_blank: true}, id: 'select'
 
       p
-        = f.label "メイン食材"
-        = f.select :main_ingredients, @main_ingredients, {include_blank: true}, id: "select"
+        = f.label 'メイン食材'
+        = f.select :main_ingredients, @main_ingredients, {include_blank: true}, id: 'select'
 
       p 
         = f.submit '選ぶ!', name: nil, id: 'btn'
