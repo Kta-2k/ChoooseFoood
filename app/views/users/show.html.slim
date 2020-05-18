@@ -6,9 +6,9 @@ div class='history_list'
         | 料理
       th
         | 日時
-      - @histories.each do |history|
-        tr
-          td
-            = history.food.name
-          td
-            = history.selected_at.strftime("%Y-%m-%d %H:%M")
+    - @histories.each do |history|
+      tr
+        td
+          = history.food.name
+        td
+          = history.selected_at.strftime("%Y-%m-%d %H:%M")
