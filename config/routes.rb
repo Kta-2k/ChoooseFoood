@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :foods, only: %i[index show]
 
   resources :histories, only: %i[create destroy]
+
+  resources :users, only: %i[show]
   
 end
