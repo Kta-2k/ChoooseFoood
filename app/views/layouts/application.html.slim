@@ -9,7 +9,7 @@ html
       nav
         ul
           - if user_signed_in?
-            = link_to '履歴', user_path(current_user[:id]), method: 'get'
+            = link_to '履歴', user_path(current_user), method: 'get'
             |   
             = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
           - else

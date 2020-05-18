@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   
   def show
-    @historys = History.where(user: current_user[:id],  selected_at: Time.now.all_week)
+    @histories = History.where(user: current_user,  selected_at: 1.week.ago.beginning_of_day...Time.current.at_end_of_day).preload(:food)
   end
 end

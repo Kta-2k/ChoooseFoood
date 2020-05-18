@@ -5,10 +5,10 @@ div class='history_list'
       th 
         | 料理
       th
-        | 日付
-      - @historys.each do |history|
+        | 日時
+      - @histories.each do |history|
         tr
           td
-            = history.food[:name]
+            = history.food.name
           td
             = history.selected_at.strftime("%Y-%m-%d %H:%M")
