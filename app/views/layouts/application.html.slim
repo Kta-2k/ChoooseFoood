@@ -5,35 +5,33 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    div 
-      nav
+    nav class='nav-bar'
+      div
+        = link_to '/' do
+          | chooose fooood
+      nav class='nav-list'
         ul
+          li
+          = link_to '履歴', user_path(current_user), method: 'get'
+      div
+        input id="tg" class="dropInput" type="checkbox"
+        label for="tg" class="dropLabel" menu
+        ul class="menu animation"
           - if user_signed_in?
-            = link_to '履歴', user_path(current_user), method: 'get'
-            |   
-            = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
+            li  class='item'
+              = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
           - else
-            = link_to '新規登録', new_user_registration_path, method: 'get'
-            |　　
-            = link_to 'ログイン', new_user_session_path, method: 'get'
+            li
+              = link_to '新規登録', new_user_registration_path, method: 'get'
+            li
+              = link_to 'ログイン', new_user_session_path, method: 'get'
+
 
     div class='center'
       - flash.each do |name, msg|
         = content_tag :div, msg, class: name
 
-      header
-        h1
-          = link_to '/', id: 'logo' do
-            = image_tag 'logo.png'
-        
-        marquee width='30%' scrollamount='9' behavior='alternate' id='visit'
-          |あなたは
-          b id='visit-color'
-            i
-              |666
-          |人目の訪問者です! キリ番の人は踏み逃げ禁止！！ 
-
-    div
+    div class='container'
       == yield
 
   footer

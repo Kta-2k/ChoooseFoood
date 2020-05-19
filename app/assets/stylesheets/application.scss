@@ -14,10 +14,6 @@
  *= require_self
  */
 
-#logo {
-  text-align: center;
-}
-
 #back{
   color: #001aff;
   font-size: 20px;
@@ -77,23 +73,56 @@
   letter-spacing: 0.3pt;
 }
 
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.nav-bar {
+  width: 90%;
+  max-height: 80px;
+  margin-top: 30px;
+  div {
+    float: left;
+  }
+}
+
+.nav-list{
+  li{
+    list-style: none;
+    overflow: hidden;
+    float: left;
+  }
+}
+
+.logo {
+  display: inline-block;
+}
+
 .center {
-  text-align: center;
-  font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
+  // text-align: center;
+  // font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
 }
 
 .result{
-  color: #fcf800;
-  font-size: 25pt;
+}
+
+a { 
+  color: black;
+  text-decoration: none;
+  :hover {
+    color: black;
+  }
+  :visited {
+    color: black;
+  }
 }
 
 body{
   // background-color: black;
   // background-image: url("/images/space.jpg");
-}
-
-h1{
-  margin-top: 70pt;
 }
 
 footer {
@@ -102,3 +131,150 @@ footer {
   text-align: right;
   margin-top: 14em;
 }
+
+
+// メニューバー
+
+.dropdown {
+  float: left;
+  margin: 0.2em;
+  }
+
+#tg {
+  display: none;
+  }
+
+.menu {
+  // position: relative;
+  visibility: hidden;
+  opacity: 0;
+  // top: -10px;
+  list-style: none;
+  }
+
+.dropInput:checked ~ .menu {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  }
+
+.dropLabel, .item {
+  padding: 0.5em 1em;
+  display: block;
+
+  // background-color: rgb(255, 255, 255);
+  text-align: center;
+  position: relative;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  }
+
+.item:hover {
+  // background-color: #3CB371;
+  color: #000;
+  }
+.item:visited {
+  color: #000;
+}
+
+.dropLabel:hover, .dropInput:checked + label {
+  // background: #008B8B;
+  // color: #fff;
+  }
+
+.animation {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
+  }
+
+
+
+
+// /* ========================================================== */
+// /*   ここから下がメニューの設定                               */
+// /* ========================================================== */
+
+// /* メニューのON/OFFを保存する為のチェックボックス 非表示 */
+// #click-menu{
+//   display : none
+// }
+
+// menu{
+//   position    : relative;
+//   font-size   : 20px;
+//   line-height : 20px;
+//   height      : 40px;
+//   width       : 100%;
+//   min-width   : 200px;
+//   // background  : black;
+// }
+
+// /* メニュー */
+// #click-menu:checked + menu{
+//   max-width : 960px;/*コンテナと同じ数値を指定しておく必要あり*/
+//   z-index   : 20;
+// }
+
+// /* オーバーレイ                                         */
+// /* メニューが表示されているときに                   */
+// /* LightBoxのように画面全体を覆うブロックを表示する     */
+// /* これによってメニュー部分を除いて                     */
+// /* 画面全体がチェックボックスへのクリックになるので     */
+// /* メニュー以外の部分をクリックするとメニューが閉じます */
+// #click-menu:checked + menu + div.overlay{
+//   position : fixed;
+//   top      :  0;
+//   bottom   :  0;
+//   left     :  0;
+//   right    :  0;
+//   z-index  : 10;
+//   background : rgba(0,0,0,0.5);
+// }
+
+// #click-menu:checked + menu ul{
+//   display: block;
+// }
+
+// ul{
+//   position: absolute;
+//   top    : 40px;
+//   right  : 0;
+//   display: none;
+// }
+
+// li{
+//   list-style-type : none;
+//   /* メニュー要素の背景色と合わせる*/
+//   background      : black;
+//   min-width       :  105px;
+//   max-width       :  200px;
+//   white-space     : nowrap;
+//   text-overflow   : ellipsis;
+// }
+
+// li a{
+//   display       : block;
+//   padding       :  10px;
+// }
+
+// /* ハンバーガーメニュー */
+// #click-menu + menu::after {
+//   position     : absolute;
+//   z-index      : 30;
+//   display      : block;
+//   content      : '\2261';/* ハンバーガーメニュー*/
+//   line-height  : 40px;
+//   width        : 20px;
+//   padding-left : 10px;
+//   color        : white;
+//   right        :  0;
+//   top          :  0;
+//   background   : black;
+// }
+
+// /* メニューを閉じる */
+// #click-menu:checked + menu::after {
+//   content : '×';/* 閉じるボタン */
+// }
