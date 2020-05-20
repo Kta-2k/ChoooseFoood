@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
       if @random_food.present?
         redirect_to food_path(@random_food)
       else
-        flash[:danger] = '選択されたカテゴリーとメイン食材の組み合わせが存在しないため一致するものが見つかりませんでした。もう一度お試しください。'
+        flash[:notice] = "選択されたカテゴリーとメイン食材の組み合わせが存在しないため一致するものが見つかりませんでした。"
         redirect_to root_path
       end
     end

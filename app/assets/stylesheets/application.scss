@@ -1,29 +1,9 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-#back{
-  color: #001aff;
-  font-size: 20px;
-  padding-top: 10px;
-  text-decoration: underline;
-  &:hover {
-    color: #FCFC00;
-    text-decoration: underline;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
 }
+
 
 #select{
   text-align: center;
@@ -31,33 +11,6 @@
   font-size: 20pt;
 }
 
-#btn{
-  display: block;
-  // font-weight: bold;
-  // font-family: Tahoma, Verdana;
-  font-size: 15pt;
-  // padding: 0.25em 0.5em;
-  text-decoration: underline;
-  color: #001aff;
-  background: #ECECEC;
-  // transition: .4s;
-  // margin-top: 10px;
-  text-align: center;
-  margin:20px auto;
-  background: #bfbfbf;
-  border: 1px solid;
-  border-top-color: #dfdfdf;
-  border-left-color: #dfdfdf;
-  border-right-color: #808080;
-  border-bottom-color: #808080;
-  box-shadow: 1px 1px 0 0 #000;
-  outline: none;
-  padding: 4px;
-  cursor: default;
-  &:hover {
-    color: #FCFC00;
-  }
-}
 
 #debug {
   color: #ffffff;
@@ -73,40 +26,40 @@
   letter-spacing: 0.3pt;
 }
 
+
+.btn {
+  text-decoration: none;
+  font-size: 30pt;
+  &:hover {
+    color: gray;
+  }
+}
+
+
 .container {
   width: 100%;
   max-width: 960px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.nav-bar {
-  width: 90%;
-  max-height: 80px;
-  margin-top: 30px;
-  div {
-    float: left;
-  }
-}
-
-.nav-list{
-  li{
-    list-style: none;
-    overflow: hidden;
-    float: left;
-  }
+  margin-top: 50px; 
+  text-align: center;
 }
 
 .logo {
   display: inline-block;
 }
 
-.center {
-  // text-align: center;
-  // font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
+
+.index {
+  p {
+    padding: 5px;
+    text-align: center;
+  }
 }
 
-.result{
+
+.select {
+  font-size: 18pt;
 }
 
 a { 
@@ -120,9 +73,18 @@ a {
   }
 }
 
+header {
+  display: flex;
+  justify-content: space-between; 
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+
 body{
   // background-color: black;
-  // background-image: url("/images/space.jpg");
+  background-image: url("/images/kitchen-wallpaper.jpg");
 }
 
 footer {
@@ -132,149 +94,87 @@ footer {
   margin-top: 14em;
 }
 
-
-// メニューバー
-
-.dropdown {
-  float: left;
-  margin: 0.2em;
-  }
-
-#tg {
-  display: none;
-  }
-
-.menu {
-  // position: relative;
-  visibility: hidden;
-  opacity: 0;
-  // top: -10px;
-  list-style: none;
-  }
-
-.dropInput:checked ~ .menu {
-  visibility: visible;
-  opacity: 1;
-  top: 0;
-  }
-
-.dropLabel, .item {
-  padding: 0.5em 1em;
-  display: block;
-
-  // background-color: rgb(255, 255, 255);
-  text-align: center;
-  position: relative;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  }
-
-.item:hover {
-  // background-color: #3CB371;
-  color: #000;
-  }
-.item:visited {
-  color: #000;
+h1 {
+  margin-left: 10px;
 }
 
-.dropLabel:hover, .dropInput:checked + label {
-  // background: #008B8B;
-  // color: #fff;
+
+// メニューバー
+.menu{
+  height: 2rem;
+  display: flex;
+  text-align: center;
+  padding-right: 10pt;
+
+  li {
+    text-decoration: none;
+    // justify-content: flex-end; 
+    list-style: none;
+    position: relative;
+    text-align: center;
+  
+    a {
+      text-align: center;
+      display: block;
+      line-height: 2rem;
+      height: 2rem;
+      width: 100%;
+    }
+  
+    li {
+      height: 0;
+      overflow: hidden;
+      transition: .5s;
+      text-align: center;
+  
+      a {
+        background-color: white;
+        padding: 5px;
+      }
+    }
   }
-
-.animation {
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;
+  
+  li:hover > ul > li {
+    height: 2rem;
+    overflow: visible;
   }
+}
 
 
+// フラッシュメッセージ
+.container-alert {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
 
+.notice {
+  position: relative; 
+  width: 60%;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+  // border: 1px solid transparent;
+  // border-radius: .25rem;
+  background-color: rgba(255, 223, 61, 0.5);
+  color: #353535;
+  text-align: center;
+}
 
-// /* ========================================================== */
-// /*   ここから下がメニューの設定                               */
-// /* ========================================================== */
-
-// /* メニューのON/OFFを保存する為のチェックボックス 非表示 */
-// #click-menu{
-//   display : none
-// }
-
-// menu{
-//   position    : relative;
-//   font-size   : 20px;
-//   line-height : 20px;
-//   height      : 40px;
-//   width       : 100%;
-//   min-width   : 200px;
-//   // background  : black;
-// }
-
-// /* メニュー */
-// #click-menu:checked + menu{
-//   max-width : 960px;/*コンテナと同じ数値を指定しておく必要あり*/
-//   z-index   : 20;
-// }
-
-// /* オーバーレイ                                         */
-// /* メニューが表示されているときに                   */
-// /* LightBoxのように画面全体を覆うブロックを表示する     */
-// /* これによってメニュー部分を除いて                     */
-// /* 画面全体がチェックボックスへのクリックになるので     */
-// /* メニュー以外の部分をクリックするとメニューが閉じます */
-// #click-menu:checked + menu + div.overlay{
-//   position : fixed;
-//   top      :  0;
-//   bottom   :  0;
-//   left     :  0;
-//   right    :  0;
-//   z-index  : 10;
-//   background : rgba(0,0,0,0.5);
-// }
-
-// #click-menu:checked + menu ul{
-//   display: block;
-// }
-
-// ul{
-//   position: absolute;
-//   top    : 40px;
-//   right  : 0;
-//   display: none;
-// }
-
-// li{
-//   list-style-type : none;
-//   /* メニュー要素の背景色と合わせる*/
-//   background      : black;
-//   min-width       :  105px;
-//   max-width       :  200px;
-//   white-space     : nowrap;
-//   text-overflow   : ellipsis;
-// }
-
-// li a{
-//   display       : block;
-//   padding       :  10px;
-// }
-
-// /* ハンバーガーメニュー */
-// #click-menu + menu::after {
-//   position     : absolute;
-//   z-index      : 30;
-//   display      : block;
-//   content      : '\2261';/* ハンバーガーメニュー*/
-//   line-height  : 40px;
-//   width        : 20px;
-//   padding-left : 10px;
-//   color        : white;
-//   right        :  0;
-//   top          :  0;
-//   background   : black;
-// }
-
-// /* メニューを閉じる */
-// #click-menu:checked + menu::after {
-//   content : '×';/* 閉じるボタン */
-// }
+// 履歴表示
+.history_list {
+  table {
+    text-align: center;
+    background-color: rgba(151, 115, 73, 0.7);
+    border-radius: 4px;
+  }
+  th {
+    color: white;
+  }
+  td {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding-left: 10pt;
+    padding-right: 10pt;
+  }
+}

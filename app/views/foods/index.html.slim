@@ -1,26 +1,27 @@
-div class='center'
-  div class='result'
+div class='index'
 
-    ruby:
-      form_options = {
-        url: foods_path,
-        method: :get,
-        local: true
-      }
+  ruby:
+    form_options = {
+      url: foods_path,
+      method: :get,
+      local: true
+    }
 
-      food_category_collection = Food.categories.keys.to_a.map do |key|
-        [Food.human_attribute_name("category.#{key}"), key]
-      end
+    food_category_collection = Food.categories.keys.to_a.map do |key|
+      [Food.human_attribute_name("category.#{key}"), key]
+    end
 
-    = form_with(form_options) do |f|
-      
-      p 
-        = f.label 'カテゴリー'
-        = f.select :category, food_category_collection, {include_blank: true}, id: 'select'
+  = form_with(form_options) do |f|
+    
+    p 
+      = f.label 'カテゴリー'
+    p
+      = f.select :category, food_category_collection, {include_blank: true}, class: 'select'
 
-      p
-        = f.label 'メイン食材'
-        = f.select :main_ingredients, @main_ingredients, {include_blank: true}, id: 'select'
+    p
+      = f.label 'メイン食材'
+    p
+      = f.select :main_ingredients, @main_ingredients, {include_blank: true}, class: 'select'
 
-      p 
-        = f.submit '選ぶ!', name: nil, id: 'btn'
+    p 
+      = f.submit '選ぶ!', name: nil, class: 'btn'

@@ -4,21 +4,21 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body
-    nav class='nav-bar'
-      div
-        = link_to '/' do
-          | chooose fooood
-      nav class='nav-list'
+    = stylesheet_link_tag "application", 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap', :media => "all"  
+    
+  header
+    h1
+      = link_to '/' do
+        | chooose foood
+      
+    ul class='menu'
+      li 
+        = image_tag 'chef-hat.png', size: '30x30'
         ul
-          li
-          = link_to '履歴', user_path(current_user), method: 'get'
-      div
-        input id="tg" class="dropInput" type="checkbox"
-        label for="tg" class="dropLabel" menu
-        ul class="menu animation"
           - if user_signed_in?
-            li  class='item'
+            li
+              = link_to '履歴', user_path(current_user), method: 'get'
+            li
               = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
           - else
             li
@@ -27,15 +27,14 @@ html
               = link_to 'ログイン', new_user_session_path, method: 'get'
 
 
-    div class='center'
+
+  body
+    div class='container-alert'
       - flash.each do |name, msg|
         = content_tag :div, msg, class: name
-
     div class='container'
       == yield
 
   footer
-    = link_to 'https://www.ubereats.com/jp' do
-      | Uber Eats
-    / #debug
-    = debug(params) if Rails.env.development?
+    / = link_to 'https://www.ubereats.com/jp' do
+    /   | Uber Eats
