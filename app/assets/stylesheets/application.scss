@@ -4,16 +4,14 @@
   font-family: 'Montserrat',sans-serif;
 }
 
-
-#select{
-  text-align: center;
-  align-items: center;
+#food-name {
+  padding-top: 40pt;
   font-size: 20pt;
 }
 
-
-#debug {
-  color: #ffffff;
+#back {
+  font-size: 14pt;
+  margin-top: 20pt;
 }
 
 #visit {
@@ -28,10 +26,16 @@
 
 
 .btn {
+  margin-top: 15pt;
+  padding: 5pt;
+  font-size: 18pt;
   text-decoration: none;
-  font-size: 30pt;
+  background-color: rgb(230, 255, 119);
+  border-radius: 5px;
+  cursor: pointer;
   &:hover {
     color: gray;
+    transition: .5s;
   }
 }
 
@@ -57,7 +61,6 @@
   }
 }
 
-
 .select {
   font-size: 18pt;
 }
@@ -76,14 +79,13 @@ a {
 header {
   display: flex;
   justify-content: space-between; 
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 10px;
   background-color: rgb(255, 255, 255);
 }
 
 
 body{
-  // background-color: black;
   background-image: url("/images/kitchen-wallpaper.jpg");
 }
 
@@ -98,6 +100,12 @@ h1 {
   margin-left: 10px;
 }
 
+h2 {
+  margin-top: -20pt;
+  margin-bottom: 20pt;
+  font-weight: normal;
+}
+
 
 // メニューバー
 .menu{
@@ -105,10 +113,10 @@ h1 {
   display: flex;
   text-align: center;
   padding-right: 10pt;
+  margin-top: 12pt;
 
   li {
-    text-decoration: none;
-    // justify-content: flex-end; 
+    text-decoration: none; 
     list-style: none;
     position: relative;
     text-align: center;
@@ -155,8 +163,6 @@ h1 {
   margin-bottom: 1rem;
   border-radius: 5px;
   padding: 5px;
-  // border: 1px solid transparent;
-  // border-radius: .25rem;
   background-color: rgba(255, 223, 61, 0.5);
   color: #353535;
   text-align: center;
@@ -165,7 +171,7 @@ h1 {
 // 履歴表示
 .history_list {
   table {
-    text-align: center;
+    margin: auto;
     background-color: rgba(151, 115, 73, 0.7);
     border-radius: 4px;
   }
@@ -176,5 +182,6 @@ h1 {
     background-color: rgba(255, 255, 255, 0.85);
     padding-left: 10pt;
     padding-right: 10pt;
+    text-align: center;
   }
 }

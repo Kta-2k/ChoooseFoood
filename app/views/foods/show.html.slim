@@ -6,12 +6,12 @@ div
       local: true
     }
 
-  p
+  p id='food-name'
     = "#{@food.name}"
   
   = form_with(form_options) do |f|
     p
       = f.hidden_field :food_id, value: @food.id
-      = f.submit 'save', class: 'btn'
-  p
-    = link_to 'BACK', root_path, id: 'back'
+      = f.submit 'Save', class: 'btn'
+  p id='back'
+    = link_to 'BACK', root_path
