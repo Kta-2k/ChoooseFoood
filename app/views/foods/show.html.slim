@@ -1,22 +1,17 @@
-div class='center'
-  div class='result'
+div
+  ruby:
+    form_options = {
+      url: histories_path,
+      method: :post,
+      local: true
+    }
 
-    ruby:
-      form_options = {
-        url: histories_path,
-        method: :post,
-        local: true
-      }
-
+  p id='food-name'
+    = "#{@food.name}"
+  
+  = form_with(form_options) do |f|
     p
-      = "#{@food.name}"
-    p
-      = link_to 'BACK', root_path, id: 'back'
-    p
-      = image_tag 'neverends.gif'
-
-    
-    = form_with(form_options) do |f|
-      p
-        = f.hidden_field :food_id, value: @food.id
-        = f.submit '保存', id: 'btn'
+      = f.hidden_field :food_id, value: @food.id
+      = f.submit 'Save', class: 'btn'
+  p id='back'
+    = link_to 'BACK', root_path

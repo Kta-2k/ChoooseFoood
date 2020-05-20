@@ -4,40 +4,37 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body
-    div 
-      nav
+    = stylesheet_link_tag "application", 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap', :media => "all"  
+    
+  header
+    h1
+      = link_to '/' do
+        = image_tag 'logo-foood.png', width: '300'
+      
+    ul class='menu'
+      li 
+        = image_tag 'chef-hat.png', size: '30x30'
         ul
           - if user_signed_in?
-            = link_to '履歴', user_path(current_user), method: 'get'
-            |   
-            = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
+            li
+              = link_to '履歴', user_path(current_user), method: 'get'
+            li
+              = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
           - else
-            = link_to '新規登録', new_user_registration_path, method: 'get'
-            |　　
-            = link_to 'ログイン', new_user_session_path, method: 'get'
+            li
+              = link_to '新規登録', new_user_registration_path, method: 'get'
+            li
+              = link_to 'ログイン', new_user_session_path, method: 'get'
 
-    div class='center'
+
+
+  body
+    div class='container-alert'
       - flash.each do |name, msg|
         = content_tag :div, msg, class: name
-
-      header
-        h1
-          = link_to '/', id: 'logo' do
-            = image_tag 'logo.png'
-        
-        marquee width='30%' scrollamount='9' behavior='alternate' id='visit'
-          |あなたは
-          b id='visit-color'
-            i
-              |666
-          |人目の訪問者です! キリ番の人は踏み逃げ禁止！！ 
-
-    div
+    div class='container'
       == yield
 
   footer
-    = link_to 'https://www.ubereats.com/jp' do
-      | Uber Eats
-    / #debug
-    = debug(params) if Rails.env.development?
+    / = link_to 'https://www.ubereats.com/jp' do
+    /   | Uber Eats

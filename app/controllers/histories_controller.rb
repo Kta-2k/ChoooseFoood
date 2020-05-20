@@ -4,7 +4,7 @@ class HistoriesController < ApplicationController
 
   def create
     if History.create(user: current_user, food: @food, selected_at: Time.now)
-      flash[:success] = "#{@food.name}を履歴に保存しました"
+      flash[:notice] = "#{@food.name}を履歴に保存しました"
       redirect_to root_path
     else
       redirect_to root_path
