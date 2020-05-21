@@ -1,0 +1,10 @@
+html
+  head
+    title Choose Food
+    = csrf_meta_tags
+    = stylesheet_link_tag    'nostalgia', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  
+  body 
+    div
+      == yield

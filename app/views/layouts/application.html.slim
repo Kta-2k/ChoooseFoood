@@ -19,6 +19,8 @@ html
             li
               = link_to '履歴', user_path(current_user), method: 'get'
             li
+              = link_to 'BTTF', nostalgia_path, method: 'get'
+            li
               = link_to 'ログアウト', destroy_user_session_path, method: 'delete' 
           - else
             li
