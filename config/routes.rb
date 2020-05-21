@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show]
   
+  resources :nostalgia, only: %i[index]
 end

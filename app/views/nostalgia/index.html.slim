@@ -1,0 +1,81 @@
+section id='taco'
+  div class='center'
+      h1
+        = link_to '/' do
+          = image_tag 'logo.png', id:'logo'
+      
+      marquee width='30%' scrollamount='9' behavior='alternate' id='visit'
+        |あなたは
+        b id='visit-color'
+          i
+            |1985
+        |人目の訪問者です! キリ番の人は踏み逃げ禁止！！
+      nav class='nav'
+        / a id='btn' href='#food' CHOOSE
+        / a id='btn' href='#space' HISTORY
+        = link_to 'CHOOSE', '#food', id:'btn'
+        = link_to 'HISTORY', '#space', id:'btn'
+        = link_to 'BTTF', '#BTTF', id:'btn'
+      = image_tag "pizza.gif", id: "pizza", height: "350"
+
+
+section id='food'
+  div class='center2'
+
+    ruby:
+      form_options = {
+        url: foods_path,
+        method: :get,
+        local: true
+      }
+
+      food_category_collection = Food.categories.keys.to_a.map do |key|
+        [Food.human_attribute_name("category.#{key}"), key]
+      end
+
+    = form_with(form_options) do |f|
+      
+      p
+        = f.label 'カテゴリー', id: 'lab'
+      p
+        = f.select :category, food_category_collection, {include_blank: true}, id: 'select'
+
+      p
+        = f.label 'メイン食材', id: 'lab2'
+      p
+        = f.select :main_ingredients, @main_ingredients, {include_blank: true}, id: 'select'
+
+      p
+        = f.submit '選ぶ', name: nil, id: 'btn'
+      
+
+
+
+
+section id='space'
+  div class='history-list'
+    div class='fire'
+      = image_tag 'fire-logo.gif'
+      p id="icon"
+        =image_tag 'kirby.gif', size: "20x20"
+        |This is 
+        |the history 
+        |of the last week
+        =image_tag 'kirby.gif', size: "20x20"
+    table 
+      tr
+        th 
+          | 料理
+        th
+          | 日時
+      - @histories.each do |history|
+        tr
+          td
+            = history.food.name
+          td
+            = history.selected_at.strftime('%Y-%m-%d %H:%M')
+
+section id='BTTF'
+  div
+    = link_to root_path, id:'center-logo' do
+      = image_tag 'BTTF.png'

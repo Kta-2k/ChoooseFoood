@@ -1,0 +1,200 @@
+// Place all the styles related to the nostalgia controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+#logo {
+  text-align: center;
+  margin-top: 200px;
+}
+
+#back{
+  color: #001aff;
+  font-size: 20px;
+  padding-top: 10px;
+  text-decoration: underline;
+  &:hover {
+    color: #FCFC00;
+    text-decoration: underline;
+  }
+}
+
+#select{
+  text-align: center;
+  font-size: 20pt;
+  margin: 5px;
+}
+
+#lab {
+  font-size: 30px;
+  font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
+  margin: 5px;
+  margin-top: 40px;
+}
+
+#lab2 {
+  font-size: 30px;
+  font-family: Comic Sans MS,Arial,Helvetica,sans-serif;
+  margin: 5px;
+}
+
+#btn{
+  display: block;
+  // font-weight: bold;
+  // font-family: Tahoma, Verdana;
+  font-size: 15pt;
+  // padding: 0.25em 0.5em;
+  text-decoration: underline;
+  color: #001aff;
+  background: #ECECEC;
+  // transition: .4s;
+  margin-top: 10px;
+  text-align: center;
+  margin:20px auto;
+  background: #bfbfbf;
+  border: 1px solid;
+  border-top-color: #dfdfdf;
+  border-left-color: #dfdfdf;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  box-shadow: 1px 1px 0 0 #000;
+  outline: none;
+  padding: 4px;
+  cursor: default;
+  &:hover {
+    color: #FCFC00;
+  }
+}
+
+#debug {
+  color: #ffffff;
+}
+
+#visit {
+  margin-bottom: 20pt;
+}
+
+#visit-color {
+  color: red;
+  letter-spacing: 0.3pt;
+}
+
+#taco {
+  background-image: url("/images/mc95.png");
+  // background-size: 20% auto;
+  // background-repeat:repeat;
+}
+
+#food{
+  background-image: url("/images/90s.jpg");
+  color: white;
+  
+}
+
+#space {
+  background-color: black;
+  background-image: url("/images/space.jpg");
+}
+
+
+#pizza {
+  // display: flex;
+  // justify-content: center;
+  text-align: center;
+  padding-top: 40px;
+}
+
+#BTTF {
+  background-image: url("/images/BTTF-fire.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.fire {
+  color: green;
+}
+
+.center {
+  text-align: center;
+  font-family: "Comic Sans MS",Arial,Helvetica,sans-serif;
+}
+
+.center2 {
+  text-align: center;
+  font-family: "Comic Sans MS",Arial,Helvetica,sans-serif;
+  position: relative;
+  padding-top: 200px;
+}
+
+.result{
+  color: #fcf800;
+  font-size: 25pt;
+}
+
+
+.fire {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.history-list {
+  padding: 50px;
+  font-size: 20pt;
+  table {
+    font-size: 20pt;
+    margin: auto;
+    background-color: none;
+    border:1px solid white;
+  }
+  th {
+    color: white;
+    border:1px solid white;
+  }
+  td {
+    background-color: none;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    text-align: center;
+    border:1px solid white;
+    color: green;
+  }
+}
+
+.nav {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 30%;
+  margin: auto;
+}
+
+#center-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+// h1{
+//   margin-top: 70pt;
+// }
+
+footer {
+  border-top: 0.05px solid #fff;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 14em;
+}
+
+section {
+  height: 100vh;
+}
+
